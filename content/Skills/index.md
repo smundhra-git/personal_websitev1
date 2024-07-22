@@ -95,6 +95,11 @@ skills:
     skillLevel: 5
     logo: "./dsa.png"
     description: "Data Structures and Algorithms (DSA) are fundamental concepts in computer science."
+
+  - skillName: "Git"
+    skillLevel : 2.8
+    logo: "./git.png"
+    description: "Blah Blah Blah"
 ---
 
 This file contains the list of skills along with their respective logos and descriptions.
