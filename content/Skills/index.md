@@ -1,5 +1,10 @@
 ---
 skills:
+  - skillName: "C++"
+    skillLevel: 5
+    logo: "./cplus.png"
+    description: "C++ is a versatile programming language commonly used for web development."
+
   - skillName: "JavaScript"
     skillLevel: 4
     logo: "./javascript.png"
@@ -9,11 +14,6 @@ skills:
     skillLevel: 5
     logo: "./python.png"
     description: "Python is a high-level programming language known for its readability and versatility."
-
-  - skillName: "C++"
-    skillLevel: 5
-    logo: "./cplus.png"
-    description: "C++ is a versatile programming language commonly used for web development."
 
   - skillName: "Java"
     skillLevel: 4

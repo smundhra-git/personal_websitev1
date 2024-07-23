@@ -63,27 +63,9 @@ const StyledPic = styled.div`
     border-radius: var(--border-radius);
     background-color: var(--white);
 
-    &:hover,
-    &:focus {
-      outline: 0;
-      transform: translate(-4px, -4px);
-
-      &:after {
-        transform: translate(8px, 8px);
-      }
-
-      .img {
-        filter: none;
-        mix-blend-mode: normal;
-      }
-    }
-
     .img {
       position: relative;
       border-radius: var(--border-radius);
-      mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1);
-      transition: var(--transition);
     }
 
     &:before,
@@ -94,14 +76,12 @@ const StyledPic = styled.div`
       width: 100%;
       height: 100%;
       border-radius: var(--border-radius);
-      transition: var(--transition);
     }
 
     &:before {
       top: 0;
       left: 0;
       background-color: var(--navy);
-      mix-blend-mode: screen;
     }
 
     &:after {
@@ -143,9 +123,7 @@ const About = () => {
               Add where I have worked with <a> hred marks</a>
             </p>
 
-            <p>
-
-            </p>
+            <p></p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>
             Comment - Add images with things like react, angular, js etc etc

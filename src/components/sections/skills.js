@@ -73,7 +73,7 @@ const StyledSkillsSection = styled.section`
       background-color: var(--dark-navy);
       border-radius: var(--border-radius);
       overflow: hidden;
-      height: 15px;
+      height: 10px;
       position: relative;
 
       .level-bar {

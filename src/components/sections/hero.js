@@ -3,6 +3,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -11,6 +12,7 @@ const StyledHeroSection = styled.section`
   min-height: 100vh;
   height: 100vh;
   padding: 0;
+  position: relative;
 
   @media (max-height: 700px) and (min-width: 700px), (max-width: 360px) {
     height: auto;
@@ -46,6 +48,58 @@ const StyledHeroSection = styled.section`
   }
 `;
 
+const StyledPic = styled.div`
+  position: absolute;
+  max-width: 300px;
+  right: 30px;
+  bottom: 180px;
+
+  @media (max-width: 768px) {
+    position: relative;
+    margin: 50px auto 0;
+    width: 70%;
+    right: auto;
+    bottom: auto;
+  }
+
+  .wrapper {
+    ${({ theme }) => theme.mixins.boxShadow};
+    display: block;
+    position: relative;
+    width: 100%;
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+
+    .img {
+      position: relative;
+      border-radius: var(--border-radius);
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: var(--border-radius);
+    }
+
+    &:before {
+      top: 0;
+      left: 0;
+      background-color: var(--navy);
+    }
+
+    &:after {
+      border: 2px solid var(--green);
+      top: 14px;
+      left: 14px;
+      z-index: -1;
+    }
+  }
+`;
+
 const Hero = () => {
   const [isMounted, setIsMounted] = useState(false);
   const prefersReducedMotion = usePrefersReducedMotion();
@@ -63,10 +117,11 @@ const Hero = () => {
   const two = <h2 className="big-heading">Shlok Mundhra.</h2>;
   const three = <h3 className="big-heading">I build software.</h3>;
   const four = (
-      <p>
-      I specialize in building softwares, and Web-Applications and am looking for opportunities to expand my career.
-      Currently, I have developed an interest for Data Structures and Algorithms and spend hours learning and solving on leetcode.
-      </p>
+    <p>
+      I specialize in building software and web applications, and I am looking for opportunities to
+      expand my career. Currently, I have developed an interest in Data Structures and Algorithms
+      and spend hours learning and solving on Leetcode.
+    </p>
   );
   const five = (
     <a
@@ -78,11 +133,7 @@ const Hero = () => {
     </a>
   );
   const six = (
-    <a
-      className="email-link"
-      href="#projects"
-      target="_self"
-      rel="noreferrer">
+    <a className="email-link" href="#projects" target="_self" rel="noreferrer">
       Check out my work!
     </a>
   );
@@ -106,6 +157,18 @@ const Hero = () => {
             ))}
         </TransitionGroup>
       )}
+      <StyledPic>
+        <div className="wrapper">
+          <StaticImage
+            className="img"
+            src="../../images/me2.png"
+            width={500}
+            quality={95}
+            formats={['AUTO', 'WEBP', 'AVIF']}
+            alt="Headshot"
+          />
+        </div>
+      </StyledPic>
     </StyledHeroSection>
   );
 };
