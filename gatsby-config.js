@@ -1,3 +1,5 @@
+require('./setMaxListener.js'); // Add this line at the top
+
 const config = require('./src/config');
 
 module.exports = {
@@ -16,7 +18,14 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-robots-txt`,
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        host: 'https://shlokmundhra.com',
+        sitemap: 'https://shlokmundhra.com/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -77,7 +86,8 @@ module.exports = {
               maxWidth: 700,
               linkImagesToOriginal: true,
               quality: 90,
-              tracedSVG: { color: config.colors.green },
+              // Remove tracedSVG option
+              // tracedSVG: { color: config.colors.green },
             },
           },
           {

@@ -6,7 +6,7 @@ skills:
     description: "C++ is a versatile programming language commonly used for web development."
 
   - skillName: "JavaScript"
-    skillLevel: 4
+    skillLevel: 4.7
     logo: "./javascript.png"
     description: "JavaScript is a versatile programming language commonly used for web development."
 

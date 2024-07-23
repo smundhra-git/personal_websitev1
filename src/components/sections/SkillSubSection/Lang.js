@@ -117,9 +117,12 @@ const Skills = () => {
     }
 
     sr.reveal(revealContainer.current, srConfig());
-  }, []);
+  }, [prefersReducedMotion]);
 
-  const skills = data?.markdownRemark?.frontmatter?.skills || [];
+  let skills = data?.markdownRemark?.frontmatter?.skills || [];
+
+  // Sort the skills array by skillLevel in descending order
+  skills = skills.sort((a, b) => b.skillLevel - a.skillLevel);
 
   const getSkillLevelWidth = (level) => `${level * 20}%`;
 

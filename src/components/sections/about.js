@@ -122,7 +122,7 @@ When I'm not coding or analyzing financial data, you’ll find me immersed in a 
 
             <p></p>
 
-            <p>I have been focussed on tech and auto sector lately, forecasting names like :</p>
+            <p>I have been focussed on forecasting technology and automotive sector lately, specially :</p>
             <ul className = "skills-list">
               {companies && companies.map((company, i) => <li key = {i}>{company}</li>) }
             </ul>

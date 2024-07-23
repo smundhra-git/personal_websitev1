@@ -27,7 +27,7 @@ const Skills = () => {
 
   return (
     <>
-           <section id="projects">
+           <section id="jobs">
       <StyledSkillsSection>
           <h2 className="numbered-heading" ref={revealTitle}>
             Some Skills I’ve Developed

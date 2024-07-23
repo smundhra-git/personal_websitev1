@@ -22,12 +22,12 @@ skills:
 
   - skillName: "Cloud Computing"
     skillLevel: 3
-    logo: "./cloud_computing.png"
+    logo: "./cloud.png"
     description: "Cloud computing involves delivering computing services like storage, databases, networking, and software over the internet (the cloud)."
 
   - skillName: "Web Development"
     skillLevel: 5
-    logo: "./web_development.png"
+    logo: "./web.png"
     description: "Web development involves building and maintaining websites. It encompasses web design, web publishing, web programming, and database management."
 
   - skillName: "Artificial Intelligence"
@@ -37,7 +37,7 @@ skills:
 
   - skillName: "Database Management"
     skillLevel: 4.9
-    logo: "./database_management.png"
+    logo: "./database.png"
     description: "Database management involves using software to store and organize data, ensuring data integrity, security, and availability."
 
   - skillName: "Agile Methodology"
@@ -47,7 +47,7 @@ skills:
 
   - skillName: "UX/UI Design"
     skillLevel: 2
-    logo: "./ux_ui.png"
+    logo: "./ui_ux.png"
     description: "UX/UI Design involves creating user interfaces and experiences that are both functional and aesthetically pleasing."
 
   - skillName: "Big Data"

@@ -15,6 +15,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "develop:trace": "node --trace-warnings ./node_modules/.bin/gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -78,5 +79,5 @@
   },
   "resolutions": {
     "graphql": "^15.5.0"
-}
+  }
 }
