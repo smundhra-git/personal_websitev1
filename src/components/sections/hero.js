@@ -64,7 +64,8 @@ const Hero = () => {
   const three = <h3 className="big-heading">I build software.</h3>;
   const four = (
       <p>
-      I specialize in building softwares, and WebApps and am looking for opportunities to expand my career.
+      I specialize in building softwares, and Web-Applications and am looking for opportunities to expand my career.
+      Currently, I have developed an interest for Data Structures and Algorithms and spend hours learning and solving on leetcode.
       </p>
   );
   const five = (
