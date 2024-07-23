@@ -13,4 +13,8 @@ export { default as Jobs } from './sections/jobs';
 export { default as Featured } from './sections/featured';
 export { default as Projects } from './sections/projects';
 export { default as Skills } from './sections/skills';
+export { default as Concepts } from './sections/SkillSubSection/candp';
+export { default as FrameWork } from './sections/SkillSubSection/FrameWork';
+export { default as Lang } from './sections/SkillSubSection/Lang';
+export { default as Tools } from './sections/SkillSubSection/tools';
 export { default as Contact } from './sections/contact';

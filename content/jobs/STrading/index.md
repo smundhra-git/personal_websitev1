@@ -1,5 +1,5 @@
 ---
-date: '2023-01-01'
+date: '2022-01-01'
 company: 'S. Trading'
 title: 'Financial Analyst Intern'
 location: 'Nagaland, INDIA'

@@ -104,8 +104,9 @@ const About = () => {
 
     sr.reveal(revealContainer.current, srConfig());
   }, []);
-
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
+  
+  const companies = ["AMZN", "CRWD", "PSNY", "PANY"];
+  const skills = ['JavaScript (ES6+)', 'Flask', 'React', 'Gatsby', 'Node.js', '.NET', 'Angular', 'MongoDB'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -115,23 +116,23 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Shlok and I develop softwares and analyze stocks. I enjoy discussing
-              various blah blah blah.
-            </p>
-
-            <p>
-              Add where I have worked with <a> hred marks</a>
+I’m Shlok Mundhra, a dedicated Computer Science student and an aspiring CFA candidate. I specialize in developing, designing, and maintaining software and websites. My passion extends to articulating economic concepts and staying updated with the latest financial news, including forecasting company trends. I thrive on engaging in deep debates and exploring controversial topics and conspiracies. 
+When I'm not coding or analyzing financial data, you’ll find me immersed in a good book.
             </p>
 
             <p></p>
 
-            <p>Here are a few technologies I’ve been working with recently:</p>
-            Comment - Add images with things like react, angular, js etc etc
-          </div>
-
+            <p>I have been focussed on tech and auto sector lately, forecasting names like :</p>
+            <ul className = "skills-list">
+              {companies && companies.map((company, i) => <li key = {i}>{company}</li>) }
+            </ul>
+            <p> Additionally I am working with the following technology to create WebApplications lately :</p>
+            
+            
           <ul className="skills-list">
             {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}
           </ul>
+          </div>
         </StyledText>
 
         <StyledPic>
