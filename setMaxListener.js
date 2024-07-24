@@ -1,3 +1,4 @@
+// setMaxListeners.js
 const EventEmitter = require('events');
 
 // Log stack traces when listeners exceed the limit

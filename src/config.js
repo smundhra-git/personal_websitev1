@@ -18,10 +18,6 @@ module.exports = {
       name: 'Linkedin',
       url: 'https://www.linkedin.com/in/shlok-mundhra/',
     },
-    {
-      name: 'Codepen',
-      url: '',
-    },
   ],
 
   navLinks: [

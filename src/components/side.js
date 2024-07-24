@@ -6,7 +6,7 @@ import { loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledSideElement = styled.div`
-  width: 40px;
+  width: 50px;
   position: fixed;
   bottom: 0;
   left: ${props => (props.orientation === 'left' ? '40px' : 'auto')};
