@@ -22,9 +22,9 @@ skills:
 
 
   - skillName: "Git"
-    skillLevel : 2.8
+    skillLevel: 3.5
     logo: "./git.png"
-    description: "Blah Blah Blah"
+    description: "Git is a distributed version control system that tracks changes in source code during software development."
 ---
 
 This file contains the list of skills along with their respective logos and descriptions.
