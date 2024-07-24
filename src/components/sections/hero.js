@@ -115,10 +115,10 @@ const Hero = () => {
 
   const one = <h1>Hi, my name is</h1>;
   const two = <h2 className="big-heading">Shlok Mundhra.</h2>;
-  const three = <h3 className="big-heading">I build softwares.</h3>;
+  const three = <h3 className="big-heading">I build software.</h3>;
   const four = (
     <p>
-      I specialize in building softwares and web applications, and I am looking for opportunities to
+      I specialize in building software and web applications, and I am looking for opportunities to
       expand my career. Currently, I have developed an interest in Data Structures and Algorithms
       and spend hours learning and solving on Leetcode.
     </p>
