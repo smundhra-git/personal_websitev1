@@ -120,13 +120,16 @@ const Skills = () => {
 
   const skills = data?.markdownRemark?.frontmatter?.skills || [];
 
+  // Sort skills by skillLevel in descending order
+  const sortedSkills = [...skills].sort((a, b) => b.skillLevel - a.skillLevel);
+
   const getSkillLevelWidth = (level) => `${level * 20}%`;
 
   return (
     <StyledSkillsSection id="skills" ref={revealContainer}>
       <h2>Tools</h2>
       <div className="skills-grid">
-        {skills.map((skill, i) => (
+        {sortedSkills.map((skill, i) => (
           <div className="skill" key={i}>
             <div className="skill-top">
               <div className="skill-logo">
