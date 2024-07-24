@@ -6,96 +6,113 @@ import { usePrefersReducedMotion } from '@hooks';
 import { StaticImage } from 'gatsby-plugin-image';
 
 const StyledHeroSection = styled.section`
-  ${({ theme }) => theme.mixins.flexCenter};
-  flex-direction: column;
-  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   min-height: 100vh;
   height: 100vh;
   padding: 0;
   position: relative;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    padding-top: var(--nav-height);
+    margin-top: 100px;
+  }
 
   @media (max-height: 700px) and (min-width: 700px), (max-width: 360px) {
     height: auto;
     padding-top: var(--nav-height);
   }
 
-  h1 {
-    margin: 0 0 30px 4px;
-    color: var(--green);
-    font-family: var(--font-mono);
-    font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
-    font-weight: 400;
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 
-    @media (max-width: 480px) {
-      margin: 0 0 20px 2px;
+    @media (max-width: 768px) {
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0 0 30px 4px;
+      color: var(--green);
+      font-family: var(--font-mono);
+      font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
+      font-weight: 400;
+
+      @media (max-width: 480px) {
+        margin: 0 0 20px 2px;
+      }
+    }
+
+    h3 {
+      margin-top: 5px;
+      color: var(--slate);
+      line-height: 0.9;
+    }
+
+    p {
+      margin: 20px 0 0;
+      max-width: 540px;
+    }
+
+    .email-link {
+      ${({ theme }) => theme.mixins.bigButton};
+      margin-top: 50px;
     }
   }
 
-  h3 {
-    margin-top: 5px;
-    color: var(--slate);
-    line-height: 0.9;
-  }
+  .image {
+    display: flex;
+    justify-content: center;
+    flex: 0 0 300px;
+    margin-left: 30px;
 
-  p {
-    margin: 20px 0 0;
-    max-width: 540px;
-  }
+    @media (max-width: 768px) {
+      margin-left: 0;
+      margin-top: 50px;
+      flex: 1 0 70%;
+    }
 
-  .email-link {
-    ${({ theme }) => theme.mixins.bigButton};
-    margin-top: 50px;
-  }
-`;
-
-const StyledPic = styled.div`
-  position: absolute;
-  max-width: 300px;
-  right: 30px;
-  bottom: 180px;
-
-  @media (max-width: 768px) {
-    position: relative;
-    margin: 50px auto 0;
-    width: 70%;
-    right: auto;
-    bottom: auto;
-  }
-
-  .wrapper {
-    ${({ theme }) => theme.mixins.boxShadow};
-    display: block;
-    position: relative;
-    width: 100%;
-    border-radius: var(--border-radius);
-    background-color: var(--white);
-
-    .img {
+    .wrapper {
+      ${({ theme }) => theme.mixins.boxShadow};
       position: relative;
-      border-radius: var(--border-radius);
-    }
-
-    &:before,
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
       width: 100%;
-      height: 100%;
       border-radius: var(--border-radius);
-    }
+      background-color: var(--white);
 
-    &:before {
-      top: 0;
-      left: 0;
-      background-color: var(--navy);
-    }
+      .img {
+        border-radius: var(--border-radius);
+      }
 
-    &:after {
-      border: 2px solid var(--green);
-      top: 14px;
-      left: 14px;
-      z-index: -1;
+      &:before,
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: var(--border-radius);
+      }
+
+      &:before {
+        top: 0;
+        left: 0;
+        background-color: var(--navy);
+      }
+
+      &:after {
+        border: 2px solid var(--green);
+        top: 14px;
+        left: 14px;
+        z-index: -1;
+      }
     }
   }
 `;
@@ -119,8 +136,8 @@ const Hero = () => {
   const four = (
     <p>
       I specialize in building software and web applications, and I am looking for opportunities to
-      expand my career. Currently, I have developed an interest in Data Structures and Algorithms
-      and spend hours learning and solving on Leetcode.
+      expand my career. Currently, I have developed an interest in Algorithm Designing,
+      spending hours learning and solving on Leetcode.
     </p>
   );
   const five = (
@@ -141,34 +158,36 @@ const Hero = () => {
 
   return (
     <StyledHeroSection>
-      {prefersReducedMotion ? (
-        <>
-          {items.map((item, i) => (
-            <div key={i}>{item}</div>
-          ))}
-        </>
-      ) : (
-        <TransitionGroup component={null}>
-          {isMounted &&
-            items.map((item, i) => (
-              <CSSTransition key={i} classNames="fadeup" timeout={loaderDelay}>
-                <div style={{ transitionDelay: `${i + 1}00ms` }}>{item}</div>
-              </CSSTransition>
+      <div className="content">
+        {prefersReducedMotion ? (
+          <>
+            {items.map((item, i) => (
+              <div key={i}>{item}</div>
             ))}
-        </TransitionGroup>
-      )}
-      <StyledPic>
+          </>
+        ) : (
+          <TransitionGroup component={null}>
+            {isMounted &&
+              items.map((item, i) => (
+                <CSSTransition key={i} classNames="fadeup" timeout={loaderDelay}>
+                  <div style={{ transitionDelay: `${i + 1}00ms` }}>{item}</div>
+                </CSSTransition>
+              ))}
+          </TransitionGroup>
+        )}
+      </div>
+      <div className="image">
         <div className="wrapper">
           <StaticImage
             className="img"
-            src="../../images/me2.png"
+            src="../../images/me.jpg"
             width={500}
             quality={95}
             formats={['AUTO', 'WEBP', 'AVIF']}
             alt="Headshot"
           />
         </div>
-      </StyledPic>
+      </div>
     </StyledHeroSection>
   );
 };

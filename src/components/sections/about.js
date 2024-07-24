@@ -139,7 +139,7 @@ When I'm not coding or analyzing financial data, you’ll find me immersed in a 
           <div className="wrapper">
             <StaticImage
               className="img"
-              src="../../images/me.jpg"
+              src="../../images/me2.png"
               width={500}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}

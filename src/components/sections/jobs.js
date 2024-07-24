@@ -8,16 +8,17 @@ import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledJobsSection = styled.section`
-  max-width: 700px;
+  max-width: 1000px;
+  margin: 0 auto;
 
   .inner {
     display: flex;
+    align-items: flex-start;
 
     @media (max-width: 600px) {
       display: block;
     }
 
-    // Prevent container from jumping
     @media (min-width: 700px) {
       min-height: 340px;
     }
@@ -86,7 +87,7 @@ const StyledTabButton = styled.button`
   }
   @media (max-width: 600px) {
     ${({ theme }) => theme.mixins.flexCenter};
-    min-width: 120px;
+    min-width: 150px;
     padding: 0 15px;
     border-left: 0;
     border-bottom: 2px solid var(--lightest-navy);
@@ -116,13 +117,8 @@ const StyledHighlight = styled.div`
     top: auto;
     bottom: 0;
     width: 100%;
-    max-width: var(--tab-width);
     height: 2px;
-    margin-left: 50px;
     transform: translateX(calc(${({ activeTabId }) => activeTabId} * var(--tab-width)));
-  }
-  @media (max-width: 480px) {
-    margin-left: 25px;
   }
 `;
 
@@ -162,7 +158,8 @@ const StyledTabPanel = styled.div`
     font-family: var(--font-mono);
     font-size: var(--fz-xs);
   }
-      .project-tech-list {
+
+  .project-tech-list {
     display: flex;
     align-items: flex-end;
     flex-grow: 1;
@@ -318,14 +315,14 @@ const Jobs = () => {
 
                     <div dangerouslySetInnerHTML={{ __html: html }} />
                     <footer>
-          {tech && (
-            <ul className="project-tech-list">
-              {tech.map((tech, i) => (
-                <li key={i}>{tech}</li>
-              ))}
-            </ul>
-          )}
-        </footer>
+                      {tech && (
+                        <ul className="project-tech-list">
+                          {tech.map((tech, i) => (
+                            <li key={i}>{tech}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </footer>
                   </StyledTabPanel>
                 </CSSTransition>
               );
