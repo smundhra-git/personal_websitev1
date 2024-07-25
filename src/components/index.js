@@ -18,4 +18,4 @@ export { default as FrameWork } from './sections/SkillSubSection/FrameWork';
 export { default as Lang } from './sections/SkillSubSection/Lang';
 export { default as Tools } from './sections/SkillSubSection/tools';
 export { default as Contact } from './sections/contact';
-export { default as Funfacts } from './sections/funfacts';
+export { default as Facts } from './sections/facts';

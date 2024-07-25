@@ -87,8 +87,8 @@ const StyledTabButton = styled.button`
   }
   @media (max-width: 600px) {
     ${({ theme }) => theme.mixins.flexCenter};
-    min-width: 150px;
-    padding: 0 15px;
+    min-width: 200px;
+    padding: 0 100px;
     border-left: 0;
     border-bottom: 2px solid var(--lightest-navy);
     text-align: center;
@@ -116,9 +116,10 @@ const StyledHighlight = styled.div`
   @media (max-width: 600px) {
     top: auto;
     bottom: 0;
-    width: 100%;
+    width: ${({ tabWidths, activeTabId }) => tabWidths[activeTabId]}px;
     height: 2px;
-    transform: translateX(calc(${({ activeTabId }) => activeTabId} * var(--tab-width)));
+    transform: translateX(${({ tabWidths, activeTabId }) => 
+      tabWidths.slice(0, activeTabId).reduce((acc, width) => acc + width + 15, 5)}px);
   }
 `;
 
@@ -208,6 +209,7 @@ const Jobs = () => {
 
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
+  const [tabWidths, setTabWidths] = useState([]);
   const tabs = useRef([]);
   const revealContainer = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
@@ -219,6 +221,10 @@ const Jobs = () => {
 
     sr.reveal(revealContainer.current, srConfig());
   }, []);
+
+  useEffect(() => {
+    setTabWidths(tabs.current.map(tab => tab.offsetWidth));
+  }, [jobsData]);
 
   const focusTab = () => {
     if (tabs.current[tabFocus]) {
@@ -283,7 +289,7 @@ const Jobs = () => {
                 </StyledTabButton>
               );
             })}
-          <StyledHighlight activeTabId={activeTabId} />
+          <StyledHighlight activeTabId={activeTabId} tabWidths={tabWidths} />
         </StyledTabList>
 
         <StyledTabPanels>

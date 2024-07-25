@@ -71,7 +71,8 @@ const Facts = () => {
           node {
             frontmatter {
               Funfacts {
-                Fact
+                Title
+                Desc
                 img {
                   childImageSharp {
                     gatsbyImageData(width: 700, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
@@ -102,21 +103,21 @@ const Facts = () => {
 
   return (
     <StyledFactsSection id="facts">
-      <h2 ref={revealTitle}>Fun Facts</h2>
+      <h2 ref={revealTitle}>Other Accomplishments</h2>
 
       <StyledFactsGrid>
         {facts &&
           facts.map((fact, i) => {
-            const { Fact, img, url } = fact;
+            const {Title, Desc, img, url } = fact;
             const image = getImage(img.childImageSharp.gatsbyImageData);
 
             return (
               <StyledFact key={i} ref={el => (revealFacts.current[i] = el)} onClick={() => window.open(url, '_blank')}>
                 <div className="fact-image">
-                  {image && <GatsbyImage image={image} alt={Fact} className="img" />}
+                  {image && <GatsbyImage image={image} alt={Title} className="img" />}
                 </div>
-                <h3 className="fact-title">{Fact}</h3>
-                <p className="fact-description">Did you know? {Fact}</p>
+                <h3 className="fact-title">{Title}</h3>
+                <p className="fact-description">{Desc} Read more <a href = {url} target = "_blank"> here </a></p>
               </StyledFact>
             );
           })}

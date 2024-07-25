@@ -38,8 +38,8 @@ module.exports = {
       url : '/#skills',
     },
     {
-      name: 'Fun Facts',
-      url :'/#funfacts',
+      name: 'Accomplishments',
+      url :'/#facts',
     },
     {
       name: 'Contact',
