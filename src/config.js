@@ -3,6 +3,10 @@ module.exports = {
 
   socialMedia: [
     {
+      name: 'Email',
+      url: 'mailto:shlokmundhra1111@gmail.com'
+    },
+    {
       name: 'GitHub',
       url: 'https://github.com/smundhra-git',
     },
@@ -17,7 +21,7 @@ module.exports = {
     {
       name: 'Linkedin',
       url: 'https://www.linkedin.com/in/shlok-mundhra/',
-    },
+    }
   ],
 
   navLinks: [

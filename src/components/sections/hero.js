@@ -62,9 +62,20 @@ const StyledHeroSection = styled.section`
       max-width: 540px;
     }
 
+    .email-links {
+      display: flex;
+      gap: 20px; /* Adjust the space between the links */
+      margin-top: 50px;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; /* Adjust the space between the links for small screens */
+      }
+    }
+
     .email-link {
       ${({ theme }) => theme.mixins.bigButton};
-      margin-top: 50px;
     }
   }
 
@@ -161,18 +172,32 @@ const Hero = () => {
       <div className="content">
         {prefersReducedMotion ? (
           <>
-            {items.map((item, i) => (
+            {items.slice(0, 4).map((item, i) => (
               <div key={i}>{item}</div>
             ))}
+            <div className="email-links">
+              {items.slice(4).map((item, i) => (
+                <div key={i}>{item}</div>
+              ))}
+            </div>
           </>
         ) : (
           <TransitionGroup component={null}>
             {isMounted &&
-              items.map((item, i) => (
+              items.slice(0, 4).map((item, i) => (
                 <CSSTransition key={i} classNames="fadeup" timeout={loaderDelay}>
                   <div style={{ transitionDelay: `${i + 1}00ms` }}>{item}</div>
                 </CSSTransition>
               ))}
+            {isMounted && (
+              <div className="email-links">
+                {items.slice(4).map((item, i) => (
+                  <CSSTransition key={i + 4} classNames="fadeup" timeout={loaderDelay}>
+                    <div style={{ transitionDelay: `${i + 5}00ms` }}>{item}</div>
+                  </CSSTransition>
+                ))}
+              </div>
+            )}
           </TransitionGroup>
         )}
       </div>

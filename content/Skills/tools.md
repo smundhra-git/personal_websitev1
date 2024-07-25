@@ -25,6 +25,17 @@ skills:
     skillLevel: 3.5
     logo: "./git.png"
     description: "Git is a distributed version control system that tracks changes in source code during software development."
+
+  - skillName: "Visual Studio"
+    skillLevel: 5
+    logo: "./vs.png"
+    description: "Visual Studio is an integrated development environment (IDE) from Microsoft."
+
+  - skillName: "Visual Studio Code"
+    skillLevel: 5
+    logo: "./vscode.png"
+    description: "Visual Studio Code is another IDE from Microsoft which supports multiple programming languages."
+
 ---
 
 This file contains the list of skills along with their respective logos and descriptions.
