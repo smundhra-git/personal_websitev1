@@ -36,7 +36,7 @@ const StyledFact = styled.li`
   cursor: pointer;
 
   &:hover {
-    transform: scale(2.2); /* Increase size on hover */
+    transform: scale(1.05); /* Slightly increase size on hover */
     box-shadow: var(--box-shadow-hover);
   }
 
@@ -53,12 +53,12 @@ const StyledFact = styled.li`
 
   .fact-title {
     font-size: 1.5rem;
-    color: #FFFFFF; /* Navy text color */
+    color: #FFFFFF; /* White text color */
     margin-bottom: 10px;
   }
 
   .fact-description {
-    color: #FFFFFF; /* Navy text color */
+    color: #FFFFFF; /* White text color */
     font-size: var(--fz-lg);
   }
 `;
@@ -103,21 +103,28 @@ const Facts = () => {
 
   return (
     <StyledFactsSection id="facts">
-      <h2 ref={revealTitle}>Other Accomplishments</h2>
+      <h2 className="numbered-heading" ref={revealTitle}>
+        Other Accomplishments
+      </h2>
 
       <StyledFactsGrid>
         {facts &&
           facts.map((fact, i) => {
-            const {Title, Desc, img, url } = fact;
+            const { Title, Desc, img, url } = fact;
             const image = getImage(img.childImageSharp.gatsbyImageData);
 
             return (
-              <StyledFact key={i} ref={el => (revealFacts.current[i] = el)} onClick={() => window.open(url, '_blank')}>
+              <StyledFact
+                key={i}
+                ref={el => (revealFacts.current[i] = el)}
+                onClick={() => url && window.open(url, '_blank')}>
                 <div className="fact-image">
                   {image && <GatsbyImage image={image} alt={Title} className="img" />}
                 </div>
                 <h3 className="fact-title">{Title}</h3>
-                <p className="fact-description">{Desc} Read more <a href = {url} target = "_blank"> here </a></p>
+                <p className="fact-description">
+                  {Desc} {url && <a href={url} target="_blank" rel="noopener noreferrer">Read more here</a>}
+                </p>
               </StyledFact>
             );
           })}

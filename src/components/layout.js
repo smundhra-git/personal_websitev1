@@ -8,6 +8,10 @@ const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
+  @media (max-width: 768px) {
+    padding: 0 0px;
+  }
 `;
 
 const Layout = ({ children, location }) => {
@@ -48,7 +52,9 @@ const Layout = ({ children, location }) => {
 
   return (
     <>
-      <Head />
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
 
       <div id="root">
         <ThemeProvider theme={theme}>

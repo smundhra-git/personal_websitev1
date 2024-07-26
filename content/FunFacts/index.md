@@ -17,6 +17,11 @@ Funfacts:
       img: "./edtech.png"
       url: ""
 
+    - Title: "Taekwondo"
+      Desc: "11 years (6-17 yrs), winning over 60 medals at various levels, from district to international. Led club to two national tournaments."
+      img: "./tkd.png"
+      url: "" 
+
     - Title: "Obssesed with LeetCode"
       Desc: "I finally completed 1100 questions on leetcode, I have targeted DP, binary trees, recursion, greedy and other topics; moving towards graph theory and bit manipulation now."
       img: "./leetcode.png"

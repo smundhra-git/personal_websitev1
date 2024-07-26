@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     width: 100%;
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   *,
@@ -25,32 +26,21 @@ const GlobalStyle = createGlobalStyle`
     color: var(--lightest-slate);
   }
 
-  /* Provide basic, default focus styles.*/
   :focus {
     outline: 2px dashed var(--green);
     outline-offset: 3px;
   }
 
-  /*
-    Remove default focus styles for mouse users ONLY if
-    :focus-visible is supported on this platform.
-  */
   :focus:not(:focus-visible) {
     outline: none;
     outline-offset: 0px;
   }
 
-  /*
-    Optionally: If :focus-visible is supported on this
-    platform, provide enhanced focus styles for keyboard
-    focus.
-  */
   :focus-visible {
     outline: 2px dashed var(--green);
     outline-offset: 3px;
   }
 
-  /* Scrollbar Styles */
   html {
     scrollbar-width: thin;
     scrollbar-color: var(--dark-slate) var(--navy);
@@ -109,6 +99,7 @@ const GlobalStyle = createGlobalStyle`
     display: grid;
     grid-template-rows: 1fr auto;
     grid-template-columns: 100%;
+    overflow-x: hidden;
   }
 
   main {
@@ -154,6 +145,7 @@ const GlobalStyle = createGlobalStyle`
 
     @media (max-width: 480px) {
       padding: 60px 0;
+      margin: 0 10px;
     }
   }
 
