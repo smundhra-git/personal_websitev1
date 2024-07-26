@@ -30,7 +30,7 @@ const Skills = () => {
            <section id="jobs">
       <StyledSkillsSection>
           <h2 className="numbered-heading" ref={revealTitle}>
-            Some Skills I’ve Developed
+            Some Skills I’ve Learned
           </h2>
       </StyledSkillsSection>
       <Lang />

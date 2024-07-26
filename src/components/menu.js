@@ -30,57 +30,57 @@ const StyledHamburgerButton = styled.button`
     transition-timing-function: linear;
     transition-duration: 0.15s;
     transition-property: opacity, filter;
-  }
 
-  .ham-box {
-    display: inline-block;
-    position: relative;
-    width: var(--hamburger-width);
-    height: 24px;
-  }
+    .ham-box {
+      display: inline-block;
+      position: relative;
+      width: var(--hamburger-width);
+      height: 24px;
+    }
 
-  .ham-box-inner {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    width: var(--hamburger-width);
-    height: 2px;
-    border-radius: var(--border-radius);
-    background-color: var(--green);
-    transition-duration: 0.22s;
-    transition-property: transform;
-    transition-delay: ${props => (props.menuOpen ? `0.12s` : `0s`)};
-    transform: rotate(${props => (props.menuOpen ? `225deg` : `0deg`)});
-    transition-timing-function: cubic-bezier(
-      ${props => (props.menuOpen ? `0.215, 0.61, 0.355, 1` : `0.55, 0.055, 0.675, 0.19`)}
-    );
-    &:before,
-    &:after {
-      content: '';
-      display: block;
+    .ham-box-inner {
       position: absolute;
-      left: auto;
+      top: 50%;
       right: 0;
       width: var(--hamburger-width);
       height: 2px;
-      border-radius: 4px;
+      border-radius: var(--border-radius);
       background-color: var(--green);
-      transition-timing-function: ease;
-      transition-duration: 0.15s;
+      transition-duration: 0.22s;
       transition-property: transform;
-    }
-    &:before {
-      width: ${props => (props.menuOpen ? `100%` : `120%`)};
-      top: ${props => (props.menuOpen ? `0` : `-10px`)};
-      opacity: ${props => (props.menuOpen ? 0 : 1)};
-      transition: ${({ menuOpen }) =>
+      transition-delay: ${props => (props.menuOpen ? `0.12s` : `0s`)};
+      transform: rotate(${props => (props.menuOpen ? `225deg` : `0deg`)});
+      transition-timing-function: cubic-bezier(
+        ${props => (props.menuOpen ? `0.215, 0.61, 0.355, 1` : `0.55, 0.055, 0.675, 0.19`)}
+      );
+      &:before,
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: auto;
+        right: 0;
+        width: var(--hamburger-width);
+        height: 2px;
+        border-radius: 4px;
+        background-color: var(--green);
+        transition-timing-function: ease;
+        transition-duration: 0.15s;
+        transition-property: transform;
+      }
+      &:before {
+        width: ${props => (props.menuOpen ? `100%` : `120%`)};
+        top: ${props => (props.menuOpen ? `0` : `-10px`)};
+        opacity: ${props => (props.menuOpen ? 0 : 1)};
+        transition: ${({ menuOpen }) =>
     menuOpen ? 'var(--ham-before-active)' : 'var(--ham-before)'};
-    }
-    &:after {
-      width: ${props => (props.menuOpen ? `100%` : `80%`)};
-      bottom: ${props => (props.menuOpen ? `0` : `-10px`)};
-      transform: rotate(${props => (props.menuOpen ? `-90deg` : `0`)});
-      transition: ${({ menuOpen }) => (menuOpen ? 'var(--ham-after-active)' : 'var(--ham-after)')};
+      }
+      &:after {
+        width: ${props => (props.menuOpen ? `100%` : `80%`)};
+        bottom: ${props => (props.menuOpen ? `0` : `-10px`)};
+        transform: rotate(${props => (props.menuOpen ? `-90deg` : `0`)});
+        transition: ${({ menuOpen }) => (menuOpen ? 'var(--ham-after-active)' : 'var(--ham-after)')};
+      }
     }
   }
 `;
@@ -98,12 +98,13 @@ const StyledSidebar = styled.aside`
     width: min(75vw, 400px);
     height: 100vh;
     outline: 0;
-    background-color: var(--black);
-    box-shadow: -10px 0px 30px -15px var(--black);
+    background-color: #0c1826; /* Set background color */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Shading effect */
     z-index: 9;
     transform: translateX(${props => (props.menuOpen ? 0 : 100)}vw);
     visibility: ${props => (props.menuOpen ? 'visible' : 'hidden')};
     transition: var(--transition);
+    opacity: ${props => (props.menuOpen ? 1 : 0)};
   }
 
   nav {
@@ -144,6 +145,12 @@ const StyledSidebar = styled.aside`
       ${({ theme }) => theme.mixins.link};
       width: 100%;
       padding: 3px 20px 20px;
+      transition: color 0.3s ease;
+
+      &:hover,
+      &:focus {
+        color: var(--green);
+      }
     }
   }
 
@@ -152,6 +159,13 @@ const StyledSidebar = styled.aside`
     padding: 18px 50px;
     margin: 10% auto 0;
     width: max-content;
+    transition: background-color 0.3s ease;
+
+    &:hover,
+    &:focus {
+      background-color: var(--green);
+      color: var(--lightest-slate);
+    }
   }
 `;
 

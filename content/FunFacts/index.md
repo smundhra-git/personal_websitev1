@@ -31,4 +31,9 @@ Funfacts:
       Desc: "I had an interest development in chess during and Post COVID and during breaks, I played chess upto 7 hours a day."
       img: "./chess.png"
       url: "www.chess.com"
+
+    - Title: "Debates & MUNs"
+      Desc: "Participated in over 140 debates and MUNs combined from middle school to college. Founded MUN Club in college. "
+      img: "./debate.png"
+      url: "https://www.facebook.com/emeraldheightsschoolofficial/posts/we-are-proud-to-share-that-our-students-participated-in-various-events-at-the-al/10165329121260408/?locale=fo_FO"
 ---

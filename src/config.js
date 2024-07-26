@@ -16,7 +16,7 @@ module.exports = {
     },
     {
       name: 'Twitter',
-      url: '',
+      url: 'https://x.com/ShlokMundhra2',
     },
     {
       name: 'Linkedin',

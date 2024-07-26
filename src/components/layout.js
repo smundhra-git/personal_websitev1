@@ -3,14 +3,49 @@ import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
 import { Head, Loader, Nav, Social, Email, Footer } from '@components';
 import { GlobalStyle, theme } from '@styles';
+import bgImage from '../images/bg2.webp';
 
 const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-size: cover;
+  background-attachment: fixed; /* Ensures the image stays fixed */
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  // color: white; /* Set the default text color to white */
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(${bgImage}) no-repeat center center fixed;
+    opacity: 0.2; /* Adjust the opacity of the image as needed */
+    z-index: -2;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Optional: Add a dark overlay to improve readability */
+    z-index: -1;
+  }
 
   @media (max-width: 768px) {
     padding: 0 0px;
+  }
+
+  /* Ensure all text elements inherit the white color */
+  h1, h2, h3, h4, h5, h6, p, a {
+    color: white;
   }
 `;
 

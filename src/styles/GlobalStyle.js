@@ -65,7 +65,8 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     background-color: var(--navy);
-    color: var(--slate);
+    // color would be var(--slatee);
+    color: #c8d1ea;
     font-family: var(--font-sans);
     font-size: var(--fz-xl);
     line-height: 1.3;
