@@ -41,8 +41,8 @@ const StyledContent = styled.div`
 
   @media (max-width: 768px) {
     padding: 0 0px;
-    &:before{
-      background: url(${bgImage}) repeat center center cover; 
+    &:before {
+      background: url(${bgImage}) repeat center center cover;
       opacity: 0.2;
       z-index: -2;
     }
@@ -56,10 +56,17 @@ const StyledContent = styled.div`
       background: rgba(0, 0, 0, 0.5); /* Optional: Add a dark overlay to improve readability */
       z-index: -1;
     }
-
+  }
 
   /* Ensure all text elements inherit the white color */
-  h1, h2, h3, h4, h5, h6, p, a {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a {
     color: white;
   }
 `;
