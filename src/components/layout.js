@@ -42,7 +42,7 @@ const StyledContent = styled.div`
   @media (max-width: 768px) {
     &:before {
       content: '';
-      background: url(${bgImage}) no-repeat center center fixed;
+      background: url(${bgImage}) no-repeat center center/40% fixed;
       background-size: cover;
       opacity: 0.2;
       z-index: -2;
