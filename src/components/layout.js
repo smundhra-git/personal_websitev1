@@ -40,9 +40,17 @@ const StyledContent = styled.div`
   }
 
   @media (max-width: 768px) {
-    padding: 0 0px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-size: cover;
+    background-attachment: fixed; /* Ensures the image stays fixed */
+    background-position: center;
     position: relative;
+    z-index: 1;
+    // color: white; /* Set the default text color to white */
     &:before {
+      content: ' ';
       background: url(${bgImage}) no-repeat center center cover;
       opacity: 0.2;
       z-index: -2;
