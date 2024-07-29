@@ -10,11 +10,10 @@ const StyledContent = styled.div`
   flex-direction: column;
   min-height: 100vh;
   background-size: cover;
-  background-attachment: fixed; /* Ensures the image stays fixed */
+  background-attachment: fixed;
   background-position: center;
   position: relative;
   z-index: 1;
-  // color: white; /* Set the default text color to white */
 
   &:before {
     content: '';
@@ -24,7 +23,8 @@ const StyledContent = styled.div`
     width: 100%;
     height: 100%;
     background: url(${bgImage}) no-repeat center center fixed;
-    opacity: 0.2; /* Adjust the opacity of the image as needed */
+    background-size: cover;
+    opacity: 0.2;
     z-index: -2;
   }
 
@@ -35,23 +35,15 @@ const StyledContent = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Optional: Add a dark overlay to improve readability */
+    background: rgba(0, 0, 0, 0.5);
     z-index: -1;
   }
 
   @media (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-size: cover;
-    background-attachment: fixed; /* Ensures the image stays fixed */
-    background-position: center;
-    position: relative;
-    z-index: 1;
-    // color: white; /* Set the default text color to white */
     &:before {
-      content: ' ';
-      background: url(${bgImage}) no-repeat center center cover;
+      content: '';
+      background: url(${bgImage}) no-repeat center center fixed;
+      background-size: cover;
       opacity: 0.2;
       z-index: -2;
       position: absolute;
@@ -60,6 +52,7 @@ const StyledContent = styled.div`
       width: 100%;
       height: 100%;
     }
+
     &:after {
       content: '';
       position: absolute;
@@ -67,12 +60,11 @@ const StyledContent = styled.div`
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.5); /* Optional: Add a dark overlay to improve readability */
+      background: rgba(0, 0, 0, 0.5);
       z-index: -1;
     }
   }
 
-  /* Ensure all text elements inherit the white color */
   h1,
   h2,
   h3,
@@ -89,7 +81,6 @@ const Layout = ({ children, location }) => {
   const isHome = location.pathname === '/';
   const [isLoading, setIsLoading] = useState(isHome);
 
-  // Sets target="_blank" rel="noopener noreferrer" on external links
   const handleExternalLinks = () => {
     const allLinks = Array.from(document.querySelectorAll('a'));
     if (allLinks.length > 0) {
@@ -108,7 +99,7 @@ const Layout = ({ children, location }) => {
     }
 
     if (location.hash) {
-      const id = location.hash.substring(1); // location.hash without the '#'
+      const id = location.hash.substring(1);
       setTimeout(() => {
         const el = document.getElementById(id);
         if (el) {
