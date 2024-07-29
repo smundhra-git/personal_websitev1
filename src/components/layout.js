@@ -14,6 +14,7 @@ const StyledContent = styled.div`
   background-position: center;
   position: relative;
   z-index: 1;
+  // color: white; /* Set the default text color to white */
 
   &:before {
     content: '';
@@ -34,6 +35,7 @@ const StyledContent = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Optional: Add a dark overlay to improve readability */
     z-index: -1;
   }
 
