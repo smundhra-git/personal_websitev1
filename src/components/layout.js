@@ -41,7 +41,22 @@ const StyledContent = styled.div`
 
   @media (max-width: 768px) {
     padding: 0 0px;
-  }
+    &:before{
+      background: url(${bgImage}) no-repeat center center cover; 
+      opacity: 0.2;
+      z-index: -2;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Optional: Add a dark overlay to improve readability */
+      z-index: -1;
+    }
+
 
   /* Ensure all text elements inherit the white color */
   h1, h2, h3, h4, h5, h6, p, a {
