@@ -147,8 +147,8 @@ const Hero = () => {
   const four = (
     <p>
       I specialize in building software and web applications, and I am looking for opportunities to
-      expand my career. Currently, I have developed an interest in Algorithm Designing,
-      spending hours learning and solving on Leetcode.
+      expand my career. Currently, I have developed an interest in Algorithm Designing, spending
+      hours learning and solving on Leetcode.
     </p>
   );
   const five = (
@@ -165,7 +165,12 @@ const Hero = () => {
       Check out my work!
     </a>
   );
-  const items = [one, two, three, four, five, six];
+  const seven = (
+    <a className="email-link" href="#about" target="_self" rel="noreferrer">
+      About me
+    </a>
+  );
+  const items = [one, two, three, four, five, six, seven];
 
   return (
     <StyledHeroSection>
@@ -201,18 +206,21 @@ const Hero = () => {
           </TransitionGroup>
         )}
       </div>
-      <div className="image">
-        <div className="wrapper">
-          <StaticImage
-            className="img"
-            src="../../images/me.jpg"
-            width={500}
-            quality={95}
-            formats={['AUTO', 'WEBP', 'AVIF']}
-            alt="Headshot"
-          />
+      <CSSTransition key={12} classNames="fadeup" timeout={loaderDelay}>
+        <div className="image" style={{ transitionDelay: `${20}00ms` }}>
+          <div className="wrapper" style={{ transitionDelay: `${20}00ms` }}>
+            <StaticImage
+              className="img"
+              style={{ transitionDelay: `${20}00ms` }}
+              src="../../images/me.jpg"
+              width={500}
+              quality={95}
+              formats={['AUTO', 'WEBP', 'AVIF']}
+              alt="Headshot"
+            />
+          </div>
         </div>
-      </div>
+      </CSSTransition>
     </StyledHeroSection>
   );
 };
