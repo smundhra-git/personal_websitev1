@@ -41,10 +41,16 @@ const StyledContent = styled.div`
 
   @media (max-width: 768px) {
     padding: 0 0px;
+    position: relative;
     &:before {
-      background: url(${bgImage}) repeat center center cover;
+      background: url(${bgImage}) no-repeat center center cover;
       opacity: 0.2;
       z-index: -2;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
     &:after {
       content: '';
