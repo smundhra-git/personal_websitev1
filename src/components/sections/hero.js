@@ -77,6 +77,17 @@ const StyledHeroSection = styled.section`
     .email-link {
       ${({ theme }) => theme.mixins.bigButton};
     }
+
+    a {
+      color: var(--green);
+      text-decoration: none;
+      transition: color 0.3s ease, transform 0.3s ease;
+      &:hover,
+      &:focus {
+        color: var(--light-green);
+        transform: scale(1.05);
+      }
+    }
   }
 
   .image {
@@ -145,11 +156,19 @@ const Hero = () => {
   const two = <h2 className="big-heading">Shlok Mundhra.</h2>;
   const three = <h3 className="big-heading">I build software.</h3>;
   const four = (
-    <p>
-      I specialize in building software and web applications, and I am looking for opportunities to
-      expand my career. Currently, I have developed an interest in Algorithm Designing, spending
-      hours learning and solving on Leetcode.
-    </p>
+    <div>
+      <p>
+        I create innovative software and dynamic web applications, merging my multidisciplinary
+        skills in computer science and finance. With a solid grasp of financial analysis, I bring a
+        unique perspective to every project.
+      </p>
+      <p>
+        Passionate about algorithm design, I continually practise my <a href="#skills">skills</a> on
+        LeetCode and by building <a href="#projects">projects</a>. Eager to leverage my diverse
+        talents, I seek opportunities in a forward-thinking environment.{' '}
+        <a href="#about">Read more</a>.
+      </p>
+    </div>
   );
   const five = (
     <a
@@ -160,17 +179,7 @@ const Hero = () => {
       Reach out!
     </a>
   );
-  const six = (
-    <a className="email-link" href="#projects" target="_self" rel="noreferrer">
-      Check out my work!
-    </a>
-  );
-  const seven = (
-    <a className="email-link" href="#about" target="_self" rel="noreferrer">
-      About me
-    </a>
-  );
-  const items = [one, two, three, four, five, six, seven];
+  const items = [one, two, three, four, five];
 
   return (
     <StyledHeroSection>

@@ -267,10 +267,9 @@ const Projects = () => {
 
   return (
     <StyledProjectsSection>
-  
       <h2 ref={revealTitle}>Stock and Policy Analysis</h2>
-
-      <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
+      {/* shall be to /archive once archives added */}
+      <Link className="inline-link archive-link" to="/" ref={revealArchiveLink}>
         view more
       </Link>
 
