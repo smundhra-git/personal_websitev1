@@ -8,8 +8,7 @@ const StyledSkillsSection = styled.section`
   flex-direction: column;
   align-items: flex-start; /* Align items to the start */
   padding: 0px 0;
-  margin-botton :0;
- 
+  margin-botton: 0;
 
   h1 {
     font-size: clamp(50px, 6vw, 50px);
@@ -26,19 +25,17 @@ const Skills = () => {
   }, []);
 
   return (
-    <>
-           <section id="jobs">
+    <section id="jobs">
       <StyledSkillsSection>
-          <h2 className="numbered-heading" ref={revealTitle}>
-            Some Skills I’ve Learned
-          </h2>
+        <h2 className="numbered-heading" ref={revealTitle}>
+          Some Skills I’ve Learned
+        </h2>
       </StyledSkillsSection>
       <Lang />
       <FrameWork />
       <Tools />
       <Concepts />
-      </section>
-    </>
+    </section>
   );
 };
 
